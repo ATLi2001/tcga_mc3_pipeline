@@ -4,7 +4,7 @@ Pipeline developed to analyze intratumor heterogeneity.
 
 ### Part 1: Running TitanCNA
 
-- [MC3 project] (https://gdc.cancer.gov/about-data/publications/mc3-2017)
+- [MC3 project](https://gdc.cancer.gov/about-data/publications/mc3-2017)
 
 - Download available bam files, get target region bed file, liftover to hg38
 
@@ -16,7 +16,7 @@ Pipeline developed to analyze intratumor heterogeneity.
 
 ### Part 2: Generating PhyloWGS Inputs
 
-###### Filter VCF file mutations
+##### Filter VCF file mutations
 
 - Download vcf files and public maf file onto virtual instance
 - Install R onto virtual instance; install packages maftools, vcfR, dplyr
@@ -29,6 +29,6 @@ Pipeline developed to analyze intratumor heterogeneity.
 - Run vcf_pan12_filter.R
   - Segfault errors may occur; manually delete those patients and skip them
 
-###### Generate SSM and CNV data.txt files
+##### Generate SSM and CNV data.txt files
 
 - Use the PhyloWGS program's parser to take in the TitanCNA output and the VCF files
