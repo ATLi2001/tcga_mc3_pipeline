@@ -14,7 +14,7 @@ Pipeline developed to analyze intratumor heterogeneity.
 - Need Jinpeng to fill in rest of information
 
 
-### Part 2: Generating PhyloWGS Inputs (SSM and CNV data.txt files)
+### Part 2: Generating PhyloWGS Inputs
 
 ###### Filter VCF file mutations
 
@@ -24,3 +24,11 @@ Pipeline developed to analyze intratumor heterogeneity.
   ```
   cut -f 1-37 mc3.v0.2.8.PUBLIC.maf > mc3.v0.2.8.PUBLIC.filtered.maf
   ```
+
+- Create tsv file with list of all vcf files and the corresponding patient id
+- Run vcf_pan12_filter.R
+  - Segfault errors may occur; manually delete those patients and skip them
+
+###### Generate SSM and CNV data.txt files
+
+- Use the PhyloWGS program's parser to take in the TitanCNA output and the VCF files
