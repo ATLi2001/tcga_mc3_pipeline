@@ -20,6 +20,7 @@ Pipeline developed to analyze intratumor heterogeneity.
 ##### Filter VCF file mutations
 
 - Download vcf files and public maf file onto virtual instance
+  - Use GDC download tool https://gdc.cancer.gov/access-data/gdc-data-transfer-tool
 - Install R onto virtual instance; install packages maftools, vcfR, dplyr
 - In reading the maf, the virtual instance will run out of memory. To remedy, trim the maf file; use 37 to keep the HGVSp_Short column
   ```
@@ -34,3 +35,8 @@ Pipeline developed to analyze intratumor heterogeneity.
 
 - Use the PhyloWGS program's parser to take in the TitanCNA output and the VCF files
   - Use https://bitbucket.org/merckey/phylowgs.git
+
+
+### Part 3: Run PhyloWGS
+
+- Use the multievolve.py with default parameters
