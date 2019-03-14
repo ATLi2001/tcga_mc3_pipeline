@@ -8,13 +8,13 @@ Pipeline developed to analyze intratumor heterogeneity.
 
 - Download available bam files, get target region bed file, liftover to hg38
 
-- Run TitanCNA (https://github.com/ATLi2001/titancna.git)
+- Run [TitanCNA](https://github.com/gavinha/TitanCNA.git)
 
 - Use Google Cloud to increase computation power
 - Need Jinpeng to fill in rest of information
 
 
-### Part 2: Generating PhyloWGS Inputs
+### Part 2: Generating [PhyloWGS](https://github.com/morrislab/phylowgs.git) Inputs
 
 ##### Filter VCF file mutations
 
@@ -32,3 +32,4 @@ Pipeline developed to analyze intratumor heterogeneity.
 ##### Generate SSM and CNV data.txt files
 
 - Use the PhyloWGS program's parser to take in the TitanCNA output and the VCF files
+  - Use https://bitbucket.org/merckey/phylowgs.git
