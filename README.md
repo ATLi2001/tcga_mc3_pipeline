@@ -8,7 +8,8 @@ Pipeline developed to analyze intratumor heterogeneity.
 
 - Download available bam files, get target region bed file, liftover to hg38
 
-- Run [TitanCNA](https://github.com/ATLi2001/titancna.git)
+- Run TitanCNA
+  - Use https://github.com/ATLi2001/titancna.git
 
 - Use Google Cloud to increase computation power
 - Need Jinpeng to fill in rest of information
