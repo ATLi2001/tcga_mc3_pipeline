@@ -46,15 +46,15 @@ Pipeline developed to analyze intratumor heterogeneity.
   - n = 4, I = inf, B = 1000, s = 2500, i = 5000, random seed
 
 - Submit using dsub; use --provider google-v2 as this is the most recent version
-```
-dsub \
-  --provider google-v2 \
-  --disk-size 0 \
-  --project nih-commons-credit-project \
-  --zones "us-east1-*" \
-  --logging gs://austin_pipeline_mc3/logging/ \
-  --image us.gcr.io/nih-commons-credit-project/phylowgs_multi:latest \
-  --command '/tmp/phylowgs/run_phylowgs_multi.sh' \
-  --tasks google_cloud/phylowgs/pan12_multi.tsv \
-  --wait
-```
+  ```
+  dsub \
+    --provider google-v2 \
+    --disk-size 0 \
+    --project nih-commons-credit-project \
+    --zones "us-east1-*" \
+    --logging gs://austin_pipeline_mc3/logging/ \
+    --image us.gcr.io/nih-commons-credit-project/phylowgs_multi:latest \
+    --command '/tmp/phylowgs/run_phylowgs_multi.sh' \
+    --tasks google_cloud/phylowgs/pan12_multi.tsv \
+    --wait
+  ```
