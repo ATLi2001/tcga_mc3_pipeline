@@ -11,7 +11,7 @@ Pipeline developed to analyze intratumor heterogeneity.
 - Run TitanCNA
   - Use https://github.com/ATLi2001/titancna.git
 
-- Use Google Cloud to increase computation power
+- Use Google Cloud 
 - Need Jinpeng to fill in rest of information
 
 
@@ -29,6 +29,7 @@ Pipeline developed to analyze intratumor heterogeneity.
 
 - Create tsv file with list of all vcf files and the corresponding patient id
 - Run vcf_pan12_filter.R
+  - Filter syn mutations out
   - Segfault errors may occur; manually delete those patients and skip them
 
 ##### Generate SSM and CNV data.txt files
@@ -39,4 +40,21 @@ Pipeline developed to analyze intratumor heterogeneity.
 
 ### Part 3: Run PhyloWGS
 
+- Set up Google Cloud environment: [Instructions](https://bitbucket.org/merckey/google_cloud/src/6500515126779350a301f327fcc0e5f92a455d57/austin_project.md?fileviewer=file-view-default)
+
 - Use the multievolve.py with default parameters
+  - n = 4, I = inf, B = 1000, s = 2500, i = 5000, random seed
+
+- Submit using dsub; use --provider google-v2 as this is the most recent version
+```
+dsub \
+  --provider google-v2 \
+  --disk-size 0 \
+  --project nih-commons-credit-project \
+  --zones "us-east1-*" \
+  --logging gs://austin_pipeline_mc3/logging/ \
+  --image us.gcr.io/nih-commons-credit-project/phylowgs_multi:latest \
+  --command '/tmp/phylowgs/run_phylowgs_multi.sh' \
+  --tasks google_cloud/phylowgs/pan12_multi.tsv \
+  --wait
+```
