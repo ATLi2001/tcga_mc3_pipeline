@@ -41,7 +41,7 @@ Pipeline developed to analyze intratumor heterogeneity.
 ### Part 3: Run PhyloWGS
 
 - Set up Google Cloud environment: [Instructions](https://bitbucket.org/merckey/google_cloud/src/6500515126779350a301f327fcc0e5f92a455d57/austin_project.md?fileviewer=file-view-default)
-  - for building docker images, cd to the dockerfile subdirectory first; otherwise, the docker copies the entire cd before building
+  - for building docker images, use a .dockerignore file: [Instructions](https://docs.docker.com/engine/reference/builder/#dockerignore-file)
 
 - Use the multievolve.py with default parameters
   - n = 4, I = inf, B = 1000, s = 2500, i = 5000, random seed
