@@ -58,7 +58,7 @@ Pipeline developed to analyze intratumor heterogeneity.
     --command '/tmp/phylowgs/run_phylowgs_multi.sh' \
     --tasks google_cloud/phylowgs/pan12_multi.tsv \
     --wait
-  ```
+    ```
 ### Part 4: Generate Summary Statistics
 
 - Set up Google Cloud environment
@@ -69,7 +69,7 @@ Pipeline developed to analyze intratumor heterogeneity.
   - r_medicc_ce.py - calculate the [MEDICC](https://bitbucket.org/rfs/medicc) Clonal Expansion Index
   - printo.py - create text files representing the tree structure
   
-- Submit using dsub
+- Submit using dsub; note that the file name prefix for each patient includes both the cancer type and patient id
   ```
   dsub \
   --provider google-v2 \
@@ -81,4 +81,4 @@ Pipeline developed to analyze intratumor heterogeneity.
   --command '/tmp/phylowgs/run_tree_reader_multi_latest.sh' \
   --tasks google_cloud/phylowgs/pan12_tree_reader_multi.tsv \
   --wait
- ```
+  ```
