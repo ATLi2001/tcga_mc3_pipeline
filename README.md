@@ -59,3 +59,26 @@ Pipeline developed to analyze intratumor heterogeneity.
     --tasks google_cloud/phylowgs/pan12_multi.tsv \
     --wait
   ```
+### Part 4: Generate Summary Statistics
+
+- Set up Google Cloud environment
+
+- Note that the following scripts are needed and were written by the author; printo.py was edited from the original
+  - tree_reader_multi_latest.py - overall call
+  - printo2_multi_latest.py - calculate the summary statistics
+  - r_medicc_ce.py - calculate the [MEDICC](https://bitbucket.org/rfs/medicc) Clonal Expansion Index
+  - printo.py - create text files representing the tree structure
+  
+- Submit using dsub
+  ```
+  dsub \
+  --provider google-v2 \
+  --disk-size 0 \
+  --project nih-commons-credit-project \
+  --zones "us-east1-*" \
+  --logging gs://austin_pipeline_mc3/logging/ \
+  --image us.gcr.io/nih-commons-credit-project/summ_stats_multi:mc3 \
+  --command '/tmp/phylowgs/run_tree_reader_multi_latest.sh' \
+  --tasks google_cloud/phylowgs/pan12_tree_reader_multi.tsv \
+  --wait
+ ```
