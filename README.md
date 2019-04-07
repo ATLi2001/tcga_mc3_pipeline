@@ -82,3 +82,20 @@ Pipeline developed to analyze intratumor heterogeneity.
   --tasks google_cloud/phylowgs/pan12_tree_reader_multi.tsv \
   --wait
   ```
+- List of summary statistics
+  - Clonal expansion index (ce)
+  - Depth of tree
+  - Maximum mutations in a single node
+  - Number of branches
+  - Number of nodes
+  - Total mutation number
+  - Proportion of mutations in the trunk (trunk proportion)
+  - Proportion of cnv's in the trunk (trunk proportion cnv)
+
+### Part 5: Analyze Summary Statistics
+
+- Run scripts submit_summ_stats_multi_analysis.R and submit_ordering_matrix.R
+  - the summ_stats_multi_analysis will do clinical analyses including survival, recurrence, stage, gender, age, and smoking
+    - some cancer types may be missing available data (i.e. ovarian cancer doesn't have two genders to analyze)
+  - the ordering_matrix will create a heatmap with the temporal ordering of the genes
+    - genes used in each cancer were determined by PANCAN paper
