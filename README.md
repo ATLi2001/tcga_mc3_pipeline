@@ -20,7 +20,7 @@ Pipeline developed to analyze intratumor heterogeneity.
 ##### Filter VCF file mutations
 
 - Download vcf files and public maf file onto virtual instance
-  - Use GDC download tool https://gdc.cancer.gov/access-data/gdc-data-transfer-tool
+  - Use [GDC download tool](https://gdc.cancer.gov/access-data/gdc-data-transfer-tool)
 - Install R onto virtual instance; install packages maftools, vcfR, dplyr
 - In reading the maf, the virtual instance will run out of memory. To remedy, trim the maf file; use 37 to keep the HGVSp_Short column
   ```
@@ -30,7 +30,7 @@ Pipeline developed to analyze intratumor heterogeneity.
 - Create tsv file with list of all vcf files and the corresponding patient id
 - Run vcf_pan12_filter.R
   - Filter syn mutations out
-  - Segfault errors may occur; manually delete those patients and skip them
+  - Segfault errors may occur; manually delete those patients to skip them
 
 ##### Generate SSM and CNV data.txt files
 
