@@ -27,7 +27,8 @@ Pipeline developed to analyze intratumor heterogeneity.
   cut -f 1-37 mc3.v0.2.8.PUBLIC.maf > mc3.v0.2.8.PUBLIC.filtered.maf
   ```
 
-- Create tsv file with list of all vcf files and the corresponding patient id
+- Create manifest file with list of all vcf file names and the corresponding patient id
+  - run vcf_manifest.R
 - Run vcf_pan12_filter.R
   - Filter syn mutations out
   - Segfault errors may occur; manually delete those patients to skip them
@@ -36,6 +37,7 @@ Pipeline developed to analyze intratumor heterogeneity.
 
 - Use the PhyloWGS program's parser to take in the TitanCNA output and the VCF files
   - Use https://bitbucket.org/merckey/phylowgs.git
+- Use processSoultion_skip_fail.sh bash script to run; input 1 = jobs list, input 2 = vcf file directory
 
 
 ### Part 3: Run PhyloWGS
@@ -45,6 +47,16 @@ Pipeline developed to analyze intratumor heterogeneity.
 
 - Use the multievolve.py with default parameters
   - n = 4, I = inf, B = 1000, s = 2500, i = 5000, random seed
+
+- Generate task list tsv file with pan12_multi_tsv.R 
+  - Use command line to get list of all completed parsing patients
+    ```
+    find phylowgs_input -name "ssm_data.txt"
+    ```
+  - Use gsutil to cp ssm_data.txt and cnv_data.txt files to a google bucket
+    ```
+    gsutil -m cp -r phylowgs_input gs://path/to/inputs
+    ```
 
 - Submit using dsub; use --provider google-v2 as this is the most recent version
   ```
