@@ -106,6 +106,8 @@ Pipeline developed to analyze intratumor heterogeneity.
 
 ### Part 5: Analyze Summary Statistics
 
+- Need to remap the ssm_data.txt mutations; pan12_ssm_mapping.R
+
 - Obtain TCGA clinical data using manifest
   - the overall clinical data needs to have survival times updated from follow up files; update_survival.R
 
