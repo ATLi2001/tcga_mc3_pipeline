@@ -115,4 +115,4 @@ Pipeline developed to analyze intratumor heterogeneity.
   - the summ_stats_multi_analysis will do clinical analyses including survival, recurrence, stage, gender, age, and smoking
     - some cancer types may be missing data (i.e. ovarian cancer doesn't have two genders to analyze)
   - the ordering_matrix will create a heatmap with the temporal ordering of the genes
-    - genes used in each cancer were determined by PANCAN paper
+    - genes used in each cancer were determined by [this paper](https://doi.org/10.1016/j.cell.2018.02.060)
