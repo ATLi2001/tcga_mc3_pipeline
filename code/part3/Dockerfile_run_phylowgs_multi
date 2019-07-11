@@ -1,0 +1,19 @@
+FROM ubuntu:14.04
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    gsl-bin \
+    curl \
+    python2.7 \
+    python2.7-dev
+
+RUN apt-get install -y libgsl0-dev
+RUN ln -sf /usr/bin/python2.7 /usr/bin/python
+RUN curl -O https://bootstrap.pypa.io/get-pip.py && python get-pip.py
+RUN pip install dsub numpy scipy ete2 pyvcf
+#RUN cd /tmp && git clone https://merckey@bitbucket.org/merckey/phylowgs.git && \
+COPY phylowgs /tmp/phylowgs
+COPY google_cloud/phylowgs/run_phylowgs_multi.sh /tmp/phylowgs/
+RUN cd /tmp/phylowgs/ && g++ -o mh.o -O3 mh.cpp  util.cpp `gsl-config --cflags --libs`
+RUN chmod 755 /tmp/phylowgs/run_phylowgs_multi.sh
+#ENTRYPOINT ["/tmp/phylowgs/run_phylowgs_multi.sh"]
+#CMD []
