@@ -12,7 +12,7 @@ import sys
 ctr=0
 def print_top_trees(tree_archive,fout,outloc,k):
 	global ctr;
-	fout = open(os.path.join(outloc,"top_k_trees_" + os.path.basename(fout)),'w')
+	fout = open(os.path.join(outloc,"top_k_trees_" + os.path.basename(fout)),'w') #edited by author
 	tree_reader = TreeReader(tree_archive)
 
 	for idx, (tidx, llh, tree) in enumerate(tree_reader.load_trees_and_metadata(k)):
