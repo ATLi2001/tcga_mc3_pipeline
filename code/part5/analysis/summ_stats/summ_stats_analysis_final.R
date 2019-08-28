@@ -541,7 +541,7 @@ tryCatch({
       wilcox_p_str <- paste0("P = ", round(wilcox_p, digits = 3))
     
     #add in Wilcoxon p value inside plot box
-    text(x=.35, y=min(curr_stat, na.rm = T), pos = 4, cex = 1.5, offset = 2,
+    text(x=.35, y=min(curr_stat, na.rm = T), pos = 4, cex = 1.35, offset = 2,
          labels = wilcox_p_str)
     
     #number of occurences for each gender
@@ -659,7 +659,7 @@ if(!all(is.na(smoke))){
       wilcox_p_str <- paste0("P = ", round(wilcox_p, digits = 3))
     
     #add in Wilcoxon p value inside plot box
-    text(x=.35, y=min(curr_stat, na.rm = T), pos = 4, cex = 1.5, offset = 2,
+    text(x=.35, y=min(curr_stat, na.rm = T), pos = 4, cex = 1.35, offset = 2,
          labels = wilcox_p_str)
     
     #a table with the number of occurences for each
