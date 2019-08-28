@@ -111,8 +111,8 @@ Pipeline developed to analyze intratumor heterogeneity.
 - Obtain TCGA clinical data using manifest
   - the overall clinical data needs to have survival times updated from follow up files; update_survival.R
 
-- Run scripts submit_summ_stats_multi_analysis.R and submit_ordering_matrix.R
-  - the summ_stats_multi_analysis will do clinical analyses including survival, recurrence, stage, gender, age, and smoking
-    - some cancer types may be missing data (i.e. ovarian cancer doesn't have two genders to analyze)
-  - the ordering_matrix will create a heatmap with the temporal ordering of the genes
+- Run scripts submit_summ_stats_analysis_final.R and submit_ordering_matrix_num.R
+  - summ_stats_analysis_final.R will do clinical analyses including survival, gender, and smoking
+    - some cancer types may be missing data (i.e. doesn't have two genders to analyze, no smoking data available)
+  - ordering_matrix_num.R will create a csv file with the temporal ordering of the genes in matrix form
     - genes used in each cancer were determined by [this paper](https://doi.org/10.1016/j.cell.2018.02.060)
